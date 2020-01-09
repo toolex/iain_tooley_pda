@@ -9,6 +9,7 @@ class CardGameTest < MiniTest::Test
     @card1 = Card.new("hearts", 5)
     @card2 = Card.new("clubs", 3)
     @card3 = Card.new("clubs", 1)
+    @cards = [@card1, @card2]
   end
 
   def test_can_check_for_Ace()
@@ -21,7 +22,7 @@ class CardGameTest < MiniTest::Test
   end
 
   def test_can_get_total_of_cards()
-    assert_equal("You have a total of 8", CardGame.cards_total([@card1, @card2]))
+    assert_equal("You have a total of 8", CardGame.cards_total(@cards))
   end
 
 
